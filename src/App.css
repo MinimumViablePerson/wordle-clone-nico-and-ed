@@ -1,0 +1,96 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-header_header {
+  margin-bottom: 30px;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  gap: 0.2rem;
+}
+
+li {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 0.2rem;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+
+  background-color: black;
+
+  animation: fade-in 2.5s;
+}
+
+.modal__text {
+  color: #ff0000cc;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: serif;
+  transform: scaleY(1.2);
+
+  user-select: none;
+}
+
+.modal__text.you-died {
+  font-size: 6rem;
+}
+
+.modal__text.answer {
+  animation: fade-in 1s linear;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.modal__reset {
+  border: none;
+  background-color: #ff0000cc;
+  font-size: 2em;
+  padding: 0.4rem;
+  font-family: serif;
+
+  animation: fade-in 1s linear;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

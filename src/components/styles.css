@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --correct-with-place: #6aaa64;
+  --correct-without-place: #c9b458;
+  --incorrect: #787c7e;
+  --keyboard: #d3d6da;
+}
+
+.LetterCell {
+  height: 70px;
+  width: 70px;
+  border: 1px solid black;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+}
+
+.LetterCell_correctWithPlace,
+.LetterCell_correctWithoutPlace,
+.LetterCell_incorrect {
+  animation: flipLetter 0.7s linear;
+  animation-fill-mode: forwards;
+  backface-visibility: hidden;
+  transform: rotateX(-90deg);
+}
+
+.LetterCell_correctWithPlace {
+  background-color: var(--correct-with-place);
+  color: white;
+}
+
+.LetterCell_correctWithoutPlace {
+  background-color: var(--correct-without-place);
+  color: white;
+}
+
+.LetterCell_incorrect {
+  background-color: var(--incorrect);
+  color: white;
+}
+
+.LetterCell_unsubmitted {
+  background-color: white;
+  color: var(--incorrect);
+  border: 1px solid black;
+}
+
+@keyframes flipLetter {
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+.Keyboard {
+  display: grid;
+  margin-top: 30px;
+}
+.Keyboard_key {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  /* background-color: #fff; */
+  /* color: #000; */
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
